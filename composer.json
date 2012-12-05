@@ -1,0 +1,24 @@
+{
+    "name": "san/san-sample-pagination",
+    "type": "library",
+    "description": "ZF2 Sample Module with Pagination support Query Param.",
+    "keywords": ["REST","zf2"],
+    "homepage": "https://github.com/samsonasik/SanSamplePagination",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdul Malik Ikhsan",
+            "email": "samsonasik@gmail.com",
+            "homepage": "http://samsonasik.wordpress.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    }
+}

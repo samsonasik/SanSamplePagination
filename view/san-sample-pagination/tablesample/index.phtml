@@ -1,0 +1,34 @@
+<?php
+
+$title = 'My Sample Data';
+echo $this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p><a href="<?php echo $this->url('SanSamplePagination/default', array(
+        'action'=>'add'));?>">Add new Sample Data</a></p>
+<div id="winpopup"></div>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th></th>
+    </tr>
+    <?php foreach($this->sample as $row) : ?>
+    <tr>
+        <td><?php echo $this->escapeHtml($row['id']); ?></td>
+        <td><?php echo $this->escapeHtml($row['name']); ?></td>
+        <td><?php echo ($row['gender'] == 2) ? 'Female' : 'Male'; ?></td>
+        <td>
+        <a href="<?php echo $this->url('SanSamplePagination/sample-id',
+            array('action'=>'edit', 'id' => $row['id'], 'controller'=>'tablesample'));?>">Edit</a>
+        <a href="<?php echo $this->url('SanSamplePagination/sample-id',
+            array('action'=>'delete', 'id' => $row['id']));?>">Delete</a>
+    </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+<?= ( count($this->sample) > 0 ) ? $this->paginationControl($this->sample, 'Sliding', 'pager.phtml') : ""; ?>

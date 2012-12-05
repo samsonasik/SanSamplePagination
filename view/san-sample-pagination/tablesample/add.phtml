@@ -1,0 +1,36 @@
+
+<?php
+$title = 'Add Student';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+    'SanSamplePagination/default',
+    array(
+        'action'     => 'add'
+    )
+));
+$form->prepare();
+
+
+echo $this->form()->openTag($form);
+
+
+echo $this->formRow($form->get('name'));
+echo $this->formRow($form->get('gender'));
+
+echo $this->formRow($form->get('hobby'));
+
+echo $this->formRow($form->get('email'));
+echo $this->formRow($form->get('birth'));
+echo $this->formRow($form->get('address'));
+echo $this->formRow($form->get('direction'));
+echo $this->formElementErrors($form->get('direction')); 
+
+//echo $this->formCollection($form); 
+
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

@@ -31,4 +31,4 @@ echo $this->headTitle($title);
     <?php endforeach; ?>
 </table>
 
-<?= ( count($this->sample) > 0 ) ? $this->paginationControl($this->sample, 'Sliding', 'pager.phtml') : ""; ?>
+<?php echo ( count($this->sample) > 0 ) ? $this->paginationControl($this->sample, 'Sliding', 'pager.phtml') : ""; ?>

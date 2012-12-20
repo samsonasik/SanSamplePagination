@@ -28,8 +28,8 @@ class TablesampleController extends AbstractActionController
         $page      = $matches->getParam('page', 1);
 
         
-        $iteratorAdapter = new \Zend\Paginator\Adapter\ArrayAdapter(  $this->getSampleTable()->fetchAll() );
-        $paginator = new \Zend\Paginator\Paginator($iteratorAdapter);
+        $arrayAdapter = new \Zend\Paginator\Adapter\ArrayAdapter(  $this->getSampleTable()->fetchAll() );
+        $paginator = new \Zend\Paginator\Paginator($arrayAdapter);
 
         $paginator->setCurrentPageNumber($page);
         $paginator->setItemCountPerPage(2);

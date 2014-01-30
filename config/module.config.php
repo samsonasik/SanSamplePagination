@@ -81,12 +81,7 @@ return array(
     
     'view_helpers' => array(
         'factories' => array(
-                'Requesthelper' => function($sm){
-                    $helper = new \SanSamplePagination\View\Helper\Requesthelper;
-                    $request = $sm->getServiceLocator()->get('Request');
-                    $helper->setRequest($request);
-                    return $helper;
-                }
+            'Requesthelper' => 'SanSamplePagination\View\Helper\Factory\RequestHelperFactory',
         )
     ),
     
